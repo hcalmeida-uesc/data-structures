@@ -4,35 +4,40 @@
 
 int main(){
 
-    STACK s;
+    STACK stack;
     STACK_ITEM item;
     char* teste_string = "Estrutura de Dados";
 
     item.etype = IS_INT;
     item.ivalue = 10;
 
-    initialize_stack(&s);
+    initialize_stack(&stack);
 
-    printf("\n%d\n",s.top);
+    push(&stack,item);
 
-    push(&s,item);
+    item = stack_top(&stack);
 
-    item = stack_top(&s);
-
-    printf("\n%d\n",s.top);
     print_stack_item(item);
 
     item.etype = IS_STRING;
     item.svalue = teste_string;
 
-    push(&s,item);
+    push(&stack,item);
     
-    item = pop(&s);
-
+    item = pop(&stack);
+    printf("\n");
     print_stack_item(item);
 
-    print_stack_item(pop(&s));
+    item = pop(&stack);
+    printf("\n");
+    print_stack_item(item);
 
+    item.etype = IS_DOUBLE;
+    item.dvalue = 20.5;
+    push(&stack,item);
+    item = pop(&stack);
+    printf("\n");
+    print_stack_item(item);
 
     return 0;
 }
