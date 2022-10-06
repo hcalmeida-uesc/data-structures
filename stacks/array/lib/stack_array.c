@@ -22,6 +22,7 @@ void push(STACK * s, STACK_ITEM item){
 STACK_ITEM pop(STACK * s){
     if(is_empty(s)){
         printf("\n\nERROR! EMPTY STACK!!\n\n");
+        exit(-1);
     }
     else{
         return s->info[s->top--];
