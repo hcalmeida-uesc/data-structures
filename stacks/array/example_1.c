@@ -8,11 +8,12 @@ int main(){
     STACK_ITEM item;
     char* teste_string = "Estrutura de Dados";
 
-    item.etype = IS_INT;
-    item.ivalue = 10;
 
     initialize_stack(&stack);
 
+
+    item.etype = IS_INT;
+    item.ivalue = 10;
     push(&stack,item);
 
     item = stack_top(&stack);
